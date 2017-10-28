@@ -1,0 +1,81 @@
+
+<div class="body">
+<div class="col-sm-6">
+  <a routerLink="/technical" *ngIf="(user | async)?.uid" ><button >Pizza</button></a>
+<router-outlet></router-outlet>
+ <a routerLink="/test" *ngIf="(user | async)?.uid" ><button >Cart</button></a>
+<router-outlet></router-outlet>
+ <a routerLink="/personal" *ngIf="(user | async)?.uid" ><button >Check Out</button></a>
+<router-outlet></router-outlet>
+
+</div>
+
+<br>
+
+ <!--<div>
+<a routerLink="/personal" *ngIf="(user | async)?.uid"><button>Meals</button></a>
+<router-outlet></router-outlet>
+ </div>-->
+  <button  class="col-sm-6" id="opt" (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+
+<button class="col-sm-6" id="opt" (click)="show=true" *ngIf="show!=true && !(user|async)?.uid"> Login </button>
+<div  class="front"*ngIf="!(user|async)?.uid"> 
+<h1>WELCOME TO PIZZA BLAST</h1>
+<br>
+<br>
+<h3>Order PIZZA Online ANYTIME ANY WHERE</h3>
+<br>
+<br>
+ 
+</div>
+ <div class="log-in-form" *ngIf="!(user|async)?.uid && show==true">
+      <h4>Log in with you email account</h4>
+  Email:
+    <input type="email" placeholder="somebody@example.com"[(ngModel)]="email">
+  
+  Password:
+    <input type="password" placeholder="Password"[(ngModel)]="password">
+ 
+
+ <div class="col-sm-6"> <button  (click)="login1(email,password)">Log in</button>
+ <!--<button >show-password</button>-->
+ <button (click)="resetPassword(email)">Forgot password</button>
+
+ </div>
+
+  <div class="google"><button (click)="googleLogin()" *ngIf="!(user | async)?.uid"> Login with Google Account</button></div>
+  
+  <div class="temp"><a href="/signup" *ngIf="!(user | async)?.uid"><button > Signup</button></a></div>
+</div>
+
+</div>
+<div  id="chatbot">
+<iframe align="right"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/871e8267-d450-4d62-b570-a0def59e9d46">
+</iframe>
+<div>
+ <!-- <input id="show-password" type="checkbox"><label for="show-password">Show password</label>-->
+
+<!--<div>
+
+  
+
+<button (click)="show=true" *ngIf="show!=true && !(user|async)?.uid"> Login </button>-->
+  <!--div class="container" *ngIf="show==true">
+<label>EMAIL</label><input type="email"  placeholder="email" *ngIf="!(user | async)?.uid" required size="10"[(ngModel)]="email" >
+   <label> password</label> <input type="password"  placeholder="password" [(ngModel)]="password"*ngIf="!(user | async)?.uid"required>
+ <button (click)="login1(email,password)" *ngIf="!(user | async)?.uid"> Login</button>
+ </div>
+<a routerLink="/menu" *ngIf="(user | async)?.uid"><button > Create Folder to store your data</button></a>
+<router-outlet></router-outlet>
+ 
+<br>
+</div>
+
+-->
+  
+  
+
+

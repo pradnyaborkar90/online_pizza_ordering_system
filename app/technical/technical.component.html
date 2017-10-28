@@ -1,0 +1,53 @@
+
+<div id="details-container">
+    <div *ngIf="(user | async)?.uid">
+
+     <!-- <a routerLink="/universal" *ngIf="(user | async)?.uid"><button >CreateNew</button></a>
+<router-outlet></router-outlet>
+      <p *ngFor="let user of items | async"><img src="../assets/images/pin.jpg" height="10" width="10">
+<span (click)="delete(user)">delete</span><br>{{user.user.url}}<br>{{user.user.describe}}
+ <a routerLink="/universal" ><span (click)="delete(user)" >edit</span></a>
+<router-outlet></router-outlet>
+
+
+    </p>-->
+    <div  class="col-sm-6" *ngIf="(user|async)?.uid">
+     <div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <img src="../assets/images/image4.jpg" alt="Card image cap" height="180" width="318">
+            <div class="card-body">
+                <h4 id="tie">Magic Pan Veg Pizza</h4>
+                <p > <b>INR 250</b> </p>
+                
+               <button (click)="add('Magic Pan Veg Pizza',250) && sum(user)" > add to cart </button>
+             
+              
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <img class="card-img-top" src="../assets/images/pzza3.jpg" alt="Card image cap" height="180" width="318">
+            <div class="card-body">
+                <h4 id="card-title">Magic Pan Non Veg Pizza</h4>
+                <p >INR 300</p>
+                <button (click)="add('Magic Pan Non Veg Pizza',300)"> add to cart </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <img class="card-img-top" src="../assets/images/sides.png" alt="Card image cap" height="180" width="318">
+            <div class="card-body">
+                <h4 id="card-title">Pan CakePizza</h4>
+                <p >INR 350</p>
+                 <button (click)="add('Magic Pan Non Veg Pizza',350) "> add to cart </button>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+

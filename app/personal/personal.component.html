@@ -1,0 +1,37 @@
+ 
+ 
+ 
+
+
+
+<div show=false id="details-container" >
+    <div *ngIf="(user | async)?.uid && !show" >
+
+     <!-- <a routerLink="/test" *ngIf="(user | async)?.uid"><button >CreateNew</button></a>
+<router-outlet></router-outlet>-->
+      <p *ngFor="let user of items | async"><img src="../assets/images/pin.jpg" height="10" width="10">
+<span (click)="delete(user)"> X </span><br>{{user.message}} <br> {{user.message2}}
+<span (click)="sum(user)">Confirm</span>
+
+         <!-- <div *ngFor="let user of items | async" price=price+user.message2 >
+              
+              <input type="text" value=price/>
+              </div>   
+              --> 
+
+    </p>
+ 
+    </div>
+  
+    </div>
+
+      <button (click)="show=true" *ngIf="!show && (user|async)?.uid"> Proceed to payment</button>
+<div  class="pay"*ngIf="show">
+     <br>
+     <br>
+     <h2>Total Amount Payable is  INR {{total}}</h2>
+     <br>
+    <a routerLink="/universal"> <button> Place Order </button> </a>
+    
+</div>
+ 

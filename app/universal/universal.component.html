@@ -1,0 +1,30 @@
+<!-- <input type="text" id="message" *ngIf="(user | async)?.uid" placeholder="enter url" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+  <div class="row columns"*ngIf="(user|async)?.uid">-->
+
+
+
+<div *ngIf="(user|async)?.uid">
+<form class="containers"
+   #userForm="ngForm"
+    (ngSubmit)="onSubmit(userForm.value)">
+  Name:<input type="text" name="name" placeholder=" " ngModel>
+  <br>
+Address:<input type="text" name="address"  placeholder=" " ngModel><br>
+Mode of payment:<select name="mode" ngModel>
+<option value="debit">debit</option>
+   <option value="credit">credit</option> 
+<option value="cod">Cash on Delivery</option>
+    </select>
+<br>
+<input type="submit" value="submit">
+</form>
+</div>
+
+  <!--<div id="details-container">
+    <div *ngIf="(user | async)?.uid">
+      <p *ngFor="let user of items | async"><img src="../assets/images/pin.jpg" height="10" width="10">
+<button (click)="delete(user)">X</button><br>{{user.user.url}}
+<br>{{user.user.describe}}</p>
+    </div>
+  </div>
+    -->
